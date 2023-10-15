@@ -24,7 +24,7 @@ public class GuildMemberJoinHandler extends ListenerAdapter {
             embedBuilder.setThumbnail(user.getAvatarUrl());
             embedBuilder.setTitle("Welcome "+user.getName());
             embedBuilder.addField("Count","Now we are ` "+event.getGuild().getMemberCount()+" ` members in the server",false);
-            embedBuilder.addField("Joined at ", Date.now(Date.allFormat),true);
+            embedBuilder.addField("Joined at ", Date.now(Date.allFormat)+"   ",true);
             embedBuilder.addField("Created at ",""+user.getTimeCreated(),true);
             embedBuilder.addField("", user.getAsMention(), false);
 

@@ -7,6 +7,7 @@ public class GuildAdminTools extends ListenerAdapter {
     @Override
     public void onUserContextInteraction(UserContextInteractionEvent event) {
         if (event.getName().equals("getAvatar")) {
+
             event.reply(event.getTarget().getEffectiveAvatarUrl()).setEphemeral(true).queue();
         }
     }

@@ -1,9 +1,11 @@
 package dev.soizx;
 
 import dev.soizx.commands.GuildAdminCommands;
-import dev.soizx.commands.GuildAdminTools;
+import dev.soizx.commands.GuildMemberCommands;
+import dev.soizx.context.GuildMessageTools;
+import dev.soizx.context.GuildUserTools;
 import dev.soizx.handler.GuildMemberJoinHandler;
-import dev.soizx.util.Load;
+import dev.soizx.util._Load;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -11,6 +13,7 @@ import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
@@ -22,7 +25,7 @@ public class Main {
     public static void main(String[] args) {
         long time = System.currentTimeMillis();
 
-        JDA builder = JDABuilder.createDefault(Load.Env("token"))
+        JDA builder = JDABuilder.createDefault(_Load.Env("token"))
                 .setBulkDeleteSplittingEnabled(false)
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
                 .setActivity(Activity.customStatus("⚡ Build in JDA"))
@@ -43,13 +46,20 @@ public class Main {
         // Builds Events
         builder.addEventListener(new GuildMemberJoinHandler());
         builder.addEventListener(new GuildAdminCommands());
-        builder.addEventListener(new GuildAdminTools());
+        builder.addEventListener(new GuildMemberCommands());
+        builder.addEventListener(new GuildUserTools());
+        builder.addEventListener(new GuildMessageTools());
 
         // Commands Builders
         builder.updateCommands().addCommands(
-                Commands.context(Command.Type.USER, "getAvatar"),
+                Commands.context(Command.Type.USER, "GET_AVATAR"),
+                Commands.context(Command.Type.MESSAGE, "LOGGER")
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR)),
                 Commands.slash("ping", "Test the response time.")
-                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR))
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR)),
+                Commands.slash("rand", "Write a random number between 2 numbers.")
+                        .addOption(OptionType.NUMBER, "min", "Min value for rand generator.", true)
+                        .addOption(OptionType.NUMBER, "max", "Max value for rand generator.", true)
         ).queue();
 
         logger.info("Done (" + ((double) (System.currentTimeMillis() - time)/1000) + "s)");

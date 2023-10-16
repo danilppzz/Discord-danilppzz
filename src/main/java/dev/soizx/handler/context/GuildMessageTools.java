@@ -1,4 +1,4 @@
-package dev.soizx.context;
+package dev.soizx.handler.context;
 
 import dev.soizx.util._Logger;
 import net.dv8tion.jda.api.entities.User;

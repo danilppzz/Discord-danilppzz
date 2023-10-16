@@ -1,4 +1,4 @@
-package dev.soizx.context;
+package dev.soizx.handler.context;
 
 import net.dv8tion.jda.api.events.interaction.command.UserContextInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

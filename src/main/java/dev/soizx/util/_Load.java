@@ -5,11 +5,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class Load {
+public class _Load {
     public static String Env(String value) {
         Properties properties = new Properties();
 
-        try (InputStream input = Load.class.getClassLoader().getResourceAsStream(".env")) {
+        try (InputStream input = _Load.class.getClassLoader().getResourceAsStream(".env")) {
             if (input != null) {
                 properties.load(input);
             } else {
@@ -25,7 +25,7 @@ public class Load {
     public static String Config(String value) {
         Properties properties = new Properties();
 
-        try (InputStream input = Load.class.getClassLoader().getResourceAsStream("config.json")) {
+        try (InputStream input = _Load.class.getClassLoader().getResourceAsStream("config.json")) {
             if (input != null) {
                 properties.load(input);
             } else {

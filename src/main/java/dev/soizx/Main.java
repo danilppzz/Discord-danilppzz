@@ -5,6 +5,7 @@ import dev.soizx.commands.GuildMemberCommands;
 import dev.soizx.context.GuildMessageContext;
 import dev.soizx.context.GuildUserContext;
 import dev.soizx.handler.GuildMemberJoinHandler;
+import dev.soizx.handler.GuildMemberNameCheckerHandler;
 import dev.soizx.util._Load;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -45,6 +46,7 @@ public class Main {
 
         // Builds Events
         builder.addEventListener(new GuildMemberJoinHandler());
+        builder.addEventListener(new GuildMemberNameCheckerHandler());
         builder.addEventListener(new GuildAdminCommands());
         builder.addEventListener(new GuildMemberCommands());
         builder.addEventListener(new GuildUserContext());

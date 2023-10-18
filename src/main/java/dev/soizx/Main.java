@@ -2,8 +2,8 @@ package dev.soizx;
 
 import dev.soizx.commands.GuildAdminCommands;
 import dev.soizx.commands.GuildMemberCommands;
-import dev.soizx.handler.context.GuildMessageTools;
-import dev.soizx.handler.context.GuildUserTools;
+import dev.soizx.context.GuildMessageContext;
+import dev.soizx.context.GuildUserContext;
 import dev.soizx.handler.GuildMemberJoinHandler;
 import dev.soizx.util._Load;
 import net.dv8tion.jda.api.JDA;
@@ -47,8 +47,8 @@ public class Main {
         builder.addEventListener(new GuildMemberJoinHandler());
         builder.addEventListener(new GuildAdminCommands());
         builder.addEventListener(new GuildMemberCommands());
-        builder.addEventListener(new GuildUserTools());
-        builder.addEventListener(new GuildMessageTools());
+        builder.addEventListener(new GuildUserContext());
+        builder.addEventListener(new GuildMessageContext());
 
         // Commands Builders
         builder.updateCommands().addCommands(

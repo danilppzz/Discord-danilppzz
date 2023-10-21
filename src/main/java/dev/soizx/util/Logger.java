@@ -8,7 +8,7 @@ import net.dv8tion.jda.api.events.interaction.command.MessageContextInteractionE
 import java.awt.*;
 import java.util.Objects;
 
-public class _Logger {
+public class Logger {
     public static void start(MessageContextInteractionEvent event, String channelID, User messageUser, Integer danger) {
         EmbedBuilder embedBuilder = new EmbedBuilder();
 
@@ -27,14 +27,14 @@ public class _Logger {
         }
 
         embedBuilder.setThumbnail(messageUser.getAvatarUrl());
-        embedBuilder.setTitle("Message LOGGED at ` "+ _Date.now(_Date.allFormat)+" `");
+        embedBuilder.setTitle("Message LOGGED at ` "+ Form.dateNow(Form.allFormat)+" `");
         embedBuilder.addField("Created at","` "+event.getTimeCreated()+" `",true);
         embedBuilder.addField("Author ", messageUser.getAsMention()+" ",true);
-        embedBuilder.addField("Malicious links ", "` "+ _Formatter.isLinkInBlacklist(event.getInteraction().getTarget().getContentDisplay())+" `",true);
+        embedBuilder.addField("Malicious links ", "` "+ Form.isLinkInBlacklist(event.getInteraction().getTarget().getContentDisplay())+" `",true);
         embedBuilder.addField("","",false);
         embedBuilder.addField("MessageContent","```"+event.getInteraction().getTarget().getContentDisplay()+"```",false);
         embedBuilder.addField("","",false);
-        embedBuilder.addField("MessageLinks", _Formatter.getLinks(event.getInteraction().getTarget().getContentDisplay()),false);
+        embedBuilder.addField("MessageLinks", Form.getLinks(event.getInteraction().getTarget().getContentDisplay()),false);
 
 
         assert textChannel != null;

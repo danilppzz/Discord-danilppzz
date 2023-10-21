@@ -2,13 +2,13 @@ package dev.soizx.util;
 
 import java.util.Random;
 
-public class _Math {
+public class MathFunctions {
 
-    public static int rand(int min, int max) {
+    public static Integer rand(int min, int max) {
         Random gen = new Random();
 
         if (min > max) {
-            throw new IllegalArgumentException("El valor mínimo no puede ser mayor que el valor máximo.");
+            return null;
         }
 
         int rang = max - min + 1;

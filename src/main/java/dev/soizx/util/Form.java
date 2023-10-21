@@ -1,9 +1,20 @@
 package dev.soizx.util;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class _Formatter {
+public class Form {
+
+    public static DateTimeFormatter hoursFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
+    public static DateTimeFormatter allFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+
+    public static String dateNow(DateTimeFormatter dateTimeFormatter) {
+        return dateTimeFormatter.format(LocalDateTime.now());
+    }
+
     public static String getLinks(String input) {
         String regex = "https?://[\\w/.-]+";
         Pattern pattern = Pattern.compile(regex);

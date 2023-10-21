@@ -6,7 +6,7 @@ import dev.soizx.context.GuildMessageContext;
 import dev.soizx.context.GuildUserContext;
 import dev.soizx.handler.GuildMemberJoinHandler;
 import dev.soizx.handler.GuildMemberNameCheckerHandler;
-import dev.soizx.util._Load;
+import dev.soizx.util.LoadConfig;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -26,7 +26,7 @@ public class Main {
     public static void main(String[] args) {
         long time = System.currentTimeMillis();
 
-        JDA builder = JDABuilder.createDefault(_Load.Env("token"))
+        JDA builder = JDABuilder.createDefault(LoadConfig.Env("token"))
                 .setBulkDeleteSplittingEnabled(false)
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
                 .setActivity(Activity.customStatus("⚡ Build in JDA"))

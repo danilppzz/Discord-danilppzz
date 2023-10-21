@@ -1,6 +1,6 @@
 package dev.soizx.commands;
 
-import dev.soizx.util._Math;
+import dev.soizx.util.MathFunctions;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
@@ -19,7 +19,7 @@ public class GuildMemberCommands extends ListenerAdapter {
 
             int minInt = (int) min;
             int maxInt = (int) max;
-            event.reply(_Math.rand(minInt, maxInt)+"").queue();
+            event.reply(MathFunctions.rand(minInt, maxInt)+"").queue();
         }
     }
 

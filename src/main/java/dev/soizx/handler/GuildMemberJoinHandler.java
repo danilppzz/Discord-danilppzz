@@ -1,7 +1,7 @@
 package dev.soizx.handler;
 
 import dev.soizx.Main;
-import dev.soizx.util._Date;
+import dev.soizx.util.Form;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
@@ -24,7 +24,7 @@ public class GuildMemberJoinHandler extends ListenerAdapter {
             embedBuilder.setThumbnail(user.getAvatarUrl());
             embedBuilder.setTitle("Welcome "+user.getName());
             embedBuilder.addField("Count","Now we are ` "+event.getGuild().getMemberCount()+" ` members in the server",false);
-            embedBuilder.addField("Joined at ", "` "+ _Date.now(_Date.allFormat)+" `",true);
+            embedBuilder.addField("Joined at ", "` "+ Form.dateNow(Form.allFormat)+" `",true);
             embedBuilder.addField("Created at ","` "+user.getTimeCreated()+" `",true);
             embedBuilder.addField("", user.getAsMention(), false);
 

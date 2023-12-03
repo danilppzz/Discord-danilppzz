@@ -32,7 +32,7 @@ public class Logger {
         embedBuilder.addField("Author ", messageUser.getAsMention()+" ",true);
         embedBuilder.addField("Malicious links ", "` "+ Form.isLinkInBlacklist(event.getInteraction().getTarget().getContentDisplay())+" `",true);
         embedBuilder.addField("","",false);
-        embedBuilder.addField("MessageContent","```"+event.getInteraction().getTarget().getContentDisplay()+"```",false);
+        embedBuilder.addField("MessageContent","```"+event.getInteraction().getTarget().getContentDisplay().replace("`", "'")+"```",false);
         embedBuilder.addField("","",false);
         embedBuilder.addField("MessageLinks", Form.getLinks(event.getInteraction().getTarget().getContentDisplay()),false);
 

@@ -12,7 +12,7 @@ public class Form {
 
 
     public static String dateNow(DateTimeFormatter dateTimeFormatter) {
-        return dateTimeFormatter.format(LocalDateTime.now());
+        return LocalDateTime.now().format(dateTimeFormatter);
     }
 
     public static String getLinks(String input) {

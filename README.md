@@ -8,20 +8,7 @@ Then open the project or directly run the bot but first you need to type your di
 ```env
 TOKEN=YOUR_BOT_TOKEN
 ```
-
-# Intents
-Be carefull with the intents, by default in my project are.
-```java
-.enableIntents(
-    GatewayIntent.GUILD_MESSAGES,
-    GatewayIntent.MESSAGE_CONTENT,
-    GatewayIntent.DIRECT_MESSAGES,
-    GatewayIntent.GUILD_MODERATION,
-    GatewayIntent.AUTO_MODERATION_CONFIGURATION,
-    GatewayIntent.GUILD_MEMBERS,
-    GatewayIntent.GUILD_PRESENCES,
-    GatewayIntent.GUILD_INVITES,
-    GatewayIntent.GUILD_MESSAGE_REACTIONS,
-    GatewayIntent.SCHEDULED_EVENTS
-)
-```
+> [!NOTE]
+> Be carefull with the intents, by default in my project are hight permissions level
+> 
+> but you can choise where ever you want

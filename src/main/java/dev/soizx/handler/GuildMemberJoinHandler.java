@@ -13,7 +13,7 @@ import java.awt.*;
 public class GuildMemberJoinHandler extends ListenerAdapter {
     @Override
     public void onGuildMemberJoin(GuildMemberJoinEvent event) {
-        TextChannel textChannel  = event.getGuild().getTextChannelById("1158719887754141726");
+        TextChannel textChannel = event.getGuild().getTextChannelById("1158719887754141726");
         User user = event.getMember().getUser();
 
         if (textChannel != null) {
@@ -22,16 +22,16 @@ public class GuildMemberJoinHandler extends ListenerAdapter {
             // EmbedBuilder Props
             embedBuilder.setColor(Color.decode("#E81F63"));
             embedBuilder.setThumbnail(user.getAvatarUrl());
-            embedBuilder.setTitle("Welcome "+user.getName());
-            embedBuilder.addField("Count","Now we are ` "+event.getGuild().getMemberCount()+" ` members in the server",false);
-            embedBuilder.addField("Joined at ", "` "+ Form.dateNow(Form.allFormat)+" `",true);
-            embedBuilder.addField("Created at ","` "+user.getTimeCreated()+" `",true);
+            embedBuilder.setTitle("Welcome " + user.getName());
+            embedBuilder.addField("Count", "Now we are ` " + event.getGuild().getMemberCount() + " ` members in the server", false);
+            embedBuilder.addField("Joined at ", "` " + Form.dateNow(Form.allFormat) + " `", true);
+            embedBuilder.addField("Created at ", "` " + user.getTimeCreated() + " `", true);
             embedBuilder.addField("", user.getAsMention(), false);
 
             // SendMessage Embed
             textChannel.sendMessageEmbeds(embedBuilder.build()).queue();
         }
 
-        Main.logger.info("Joined - "+event.getMember().getEffectiveName() + " - newValue ("+event.getGuild().getMemberCount()+")");
+        Main.logger.info("Joined - " + event.getMember().getEffectiveName() + " - newValue (" + event.getGuild().getMemberCount() + ")");
     }
 }

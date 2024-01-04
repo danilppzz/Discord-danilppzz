@@ -5,7 +5,7 @@ import dev.soizx.commands.GuildMemberCommands;
 import dev.soizx.context.GuildMessageContext;
 import dev.soizx.context.GuildUserContext;
 import dev.soizx.handler.*;
-import dev.soizx.util.LoadConfig;
+import dev.soizx.util.LoadConfiguration;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -23,9 +23,12 @@ public class Main {
     public static Logger logger = Logger.getLogger("Server");
 
     public static void main(String[] args) {
+        Runtime runtime = Runtime.getRuntime();
+        int max = (int) (runtime.totalMemory() / (1024 * 1024));
+        System.out.println(max);
         long time = System.currentTimeMillis();
 
-        JDA builder = JDABuilder.createDefault(LoadConfig.Env("token"))
+        JDA builder = JDABuilder.createDefault(LoadConfiguration.Env("token"))
                 .setBulkDeleteSplittingEnabled(false)
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
                 .setActivity(Activity.customStatus("🤍 Build in JDA"))
@@ -63,7 +66,10 @@ public class Main {
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR)),
                 Commands.slash("links", "Get active links on the server."),
                 Commands.slash("reqdev", "Request to the developer rank.")
-                        .addOption(OptionType.STRING, "language", "Select your language.", true, true)
+                        .addOption(OptionType.STRING, "language", "Select your language.", true, true),
+                Commands.slash("stats", "Return the stats of the server and the bot.")
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR))
+
         ).queue();
 
         logger.info("Done (" + ((double) (System.currentTimeMillis() - time)/1000) + "s)");

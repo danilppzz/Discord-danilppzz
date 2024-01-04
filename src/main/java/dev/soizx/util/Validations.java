@@ -4,6 +4,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -20,6 +22,14 @@ public class Validations {
         if (lastRequestTime == null || Duration.between(lastRequestTime, currentTime).compareTo(requestCooldown) >= 0) {
             lastRequestTimes.put(userId, currentTime);
         }
+    }
+
+    public static DateTimeFormatter hoursFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
+    public static DateTimeFormatter allFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+
+    public static String dateNow(DateTimeFormatter dateTimeFormatter) {
+        return LocalDateTime.now().format(dateTimeFormatter);
     }
 
     public static boolean isInCooldownList(String userId) {
@@ -55,12 +65,56 @@ public class Validations {
     }
 
     public static boolean validateURL(String url) {
-        if (Form.isLinkInBlacklist(url)) return false;
+        if (isLinkInBlacklist(url)) return false;
         try {
             new URL(url);
             return true;
         } catch (MalformedURLException e) {
             return false;
+        }
+    }
+
+    public static boolean isLinkInBlacklist(String input) {
+
+        // Need to create a File .json of blacklisted links
+        String blacklist = "https://example.com/";
+        String regex = "https?://[\\w/.-]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(input);
+
+        while (matcher.find()) {
+            String link = matcher.group();
+            if (blacklist.equals(link)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static String getLinks(String input) {
+        String regex = "https?://[\\w/.-]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(input);
+
+        StringBuilder jsonLinks = new StringBuilder("[");
+
+        boolean firstLink = true;
+
+        while (matcher.find()) {
+            String link = matcher.group();
+            if (!firstLink) {
+                jsonLinks.append(", ");
+            }
+            jsonLinks.append("\"").append(link).append("\"");
+            firstLink = false;
+        }
+
+        jsonLinks.append("]");
+
+        if (firstLink) {
+            return "[]";
+        } else {
+            return jsonLinks.toString();
         }
     }
 }

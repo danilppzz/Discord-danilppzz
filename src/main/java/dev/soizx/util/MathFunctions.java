@@ -12,7 +12,6 @@ public class MathFunctions {
         }
 
         int rang = max - min + 1;
-
         return gen.nextInt(rang) + min;
     }
 }

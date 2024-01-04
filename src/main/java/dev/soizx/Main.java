@@ -4,9 +4,7 @@ import dev.soizx.commands.GuildAdminCommands;
 import dev.soizx.commands.GuildMemberCommands;
 import dev.soizx.context.GuildMessageContext;
 import dev.soizx.context.GuildUserContext;
-import dev.soizx.handler.GuildMemberJoinHandler;
-import dev.soizx.handler.GuildMemberNameCheckerHandler;
-import dev.soizx.handler.ListenerModelInteraction;
+import dev.soizx.handler.*;
 import dev.soizx.util.LoadConfig;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -53,6 +51,8 @@ public class Main {
         builder.addEventListener(new GuildUserContext());
         builder.addEventListener(new GuildMessageContext());
         builder.addEventListener(new ListenerModelInteraction());
+        builder.addEventListener(new ListenerButtonsInteraction());
+        builder.addEventListener(new ListenerCommandAutoComplete());
 
         // Commands Builders
         builder.updateCommands().addCommands(
@@ -64,7 +64,9 @@ public class Main {
                 Commands.slash("rand", "Write a random number between 2 numbers.")
                         .addOption(OptionType.NUMBER, "min", "Min value for rand generator.", true)
                         .addOption(OptionType.NUMBER, "max", "Max value for rand generator.", true),
+                Commands.slash("links", "Get active links on the server."),
                 Commands.slash("reqdev", "Request to the developer rank.")
+                        .addOption(OptionType.STRING, "language", "Select your language.", true, true)
         ).queue();
 
         logger.info("Done (" + ((double) (System.currentTimeMillis() - time)/1000) + "s)");

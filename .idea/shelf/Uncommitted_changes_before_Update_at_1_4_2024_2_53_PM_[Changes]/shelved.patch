@@ -1,0 +1,81 @@
+Index: src/main/java/dev/soizx/modal/ExampleModal.java
+===================================================================
+diff --git a/src/main/java/dev/soizx/modal/ExampleModal.java b/src/main/java/dev/soizx/modal/ExampleModal.java
+deleted file mode 100644
+--- a/src/main/java/dev/soizx/modal/ExampleModal.java	(revision 567f6e63068772d2790089a4179f1ebb39ca060f)
++++ /dev/null	(revision 567f6e63068772d2790089a4179f1ebb39ca060f)
+@@ -1,4 +0,0 @@
+-package dev.soizx.modal;
+-
+-public class ExampleModal {
+-}
+Index: .idea/inspectionProfiles/Project_Default.xml
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+deleted file mode 100644
+--- a/.idea/inspectionProfiles/Project_Default.xml	(revision 567f6e63068772d2790089a4179f1ebb39ca060f)
++++ /dev/null	(revision 567f6e63068772d2790089a4179f1ebb39ca060f)
+@@ -1,12 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <profile version="1.0">
+-    <option name="myName" value="Project Default" />
+-    <inspection_tool class="EnhancedSwitchMigration" enabled="false" level="WARNING" enabled_by_default="false" />
+-    <inspection_tool class="IgnoreResultOfCall" enabled="false" level="WARNING" enabled_by_default="false">
+-      <option name="m_reportAllNonLibraryCalls" value="false" />
+-      <option name="callCheckString" value="java.io.File,.*,java.io.InputStream,read|skip|available|markSupported,java.io.Reader,read|skip|ready|markSupported,java.lang.AbstractStringBuilder,capacity|codePointAt|codePointBefore|codePointCount|indexOf|lastIndexOf|offsetByCodePoints|substring|subSequence,java.lang.Boolean,.*,java.lang.Byte,.*,java.lang.Character,.*,java.lang.Double,.*,java.lang.Float,.*,java.lang.Integer,.*,java.lang.Long,.*,java.lang.Math,.*,java.lang.Object,equals|hashCode|toString,java.lang.Short,.*,java.lang.StrictMath,.*,java.lang.String,.*,java.lang.Thread,interrupted,java.math.BigDecimal,.*,java.math.BigInteger,.*,java.net.InetAddress,.*,java.net.URI,.*,java.nio.channels.AsynchronousChannelGroup,.*,java.nio.channels.Channel,isOpen,java.nio.channels.FileChannel,open|map|lock|tryLock|write,java.nio.channels.ScatteringByteChannel,read,java.nio.channels.SocketChannel,open|socket|isConnected|isConnectionPending,java.util.Arrays,.*,java.util.Collections,(?!addAll).*,java.util.List,of,java.util.Map,of|ofEntries|entry,java.util.Set,of,java.util.UUID,.*,java.util.concurrent.BlockingQueue,offer|remove,java.util.concurrent.CountDownLatch,await|getCount,java.util.concurrent.ExecutorService,awaitTermination|isShutdown|isTerminated,java.util.concurrent.ForkJoinPool,awaitQuiescence,java.util.concurrent.Semaphore,tryAcquire|availablePermits|isFair|hasQueuedThreads|getQueueLength|getQueuedThreads,java.util.concurrent.locks.Condition,await|awaitNanos|awaitUntil,java.util.concurrent.locks.Lock,tryLock|newCondition,java.util.regex.Matcher,pattern|toMatchResult|start|end|group|groupCount|matches|find|lookingAt|quoteReplacement|replaceAll|replaceFirst|regionStart|regionEnd|hasTransparentBounds|hasAnchoringBounds|hitEnd|requireEnd,java.util.regex.Pattern,.*,java.util.stream.BaseStream,.*,java.util.stream.DoubleStream,.*,java.util.stream.IntStream,.*,java.util.stream.LongStream,.*,java.util.stream.Stream,.*" />
+-    </inspection_tool>
+-    <inspection_tool class="InstantiationOfUtilityClass" enabled="false" level="WARNING" enabled_by_default="false" />
+-    <inspection_tool class="ThrowablePrintStackTrace" enabled="false" level="WARNING" enabled_by_default="false" />
+-  </profile>
+-</component>
+\ No newline at end of file
+Index: src/main/java/dev/soizx/handler/ListenerModelInteraction.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/dev/soizx/handler/ListenerModelInteraction.java b/src/main/java/dev/soizx/handler/ListenerModelInteraction.java
+new file mode 100644
+--- /dev/null	(date 1704374803820)
++++ b/src/main/java/dev/soizx/handler/ListenerModelInteraction.java	(date 1704374803820)
+@@ -0,0 +1,20 @@
++package dev.soizx.handler;
++
++import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
++import net.dv8tion.jda.api.hooks.ListenerAdapter;
++import org.jetbrains.annotations.NotNull;
++
++import java.util.Objects;
++
++public class ListenerModelInteraction extends ListenerAdapter {
++    @Override
++    public void onModalInteraction(@NotNull ModalInteractionEvent event) {
++        if (event.getModalId().equals("request_to_dev")) {
++            String full_name = Objects.requireNonNull(event.getValue("full_name")).getAsString();
++            String github_url = Objects.requireNonNull(event.getValue("github_url")).getAsString();
++            String certificate_url = Objects.requireNonNull(event.getValue("certificate_url")).getAsString();
++
++            event.reply("Your request has been sent!").setEphemeral(true).queue();
++        }
++    }
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"corretto-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 567f6e63068772d2790089a4179f1ebb39ca060f)
++++ b/.idea/misc.xml	(date 1702675420355)
+@@ -8,7 +8,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file

@@ -1,10 +1,12 @@
 package dev.soizx.commands;
 
-import kotlin.collections.builders.ListBuilder;
+import dev.soizx.util.Validations;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Invite;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +26,31 @@ public class GuildAdminCommands extends ListenerAdapter {
             }
 
             event.reply(urls.toString()).setEphemeral(true).queue();
+        } else if (event.getName().equals("stats")) {
+            String osName = System.getProperty("os.name");
+            String osVersion = System.getProperty("os.version");
+
+            EmbedBuilder embedBuilder = new EmbedBuilder();
+
+            embedBuilder.setTitle(Validations.dateNow(Validations.allFormat));
+            embedBuilder.setDescription("Current stats of the bot and the server.");
+            embedBuilder.setColor(Color.decode("#4F90DF"));
+            embedBuilder.setThumbnail(Objects.requireNonNull(event.getGuild()).getIconUrl());
+
+            embedBuilder.addBlankField(false);
+
+            embedBuilder.addField("Performance", "```" + osName + " " + osVersion + "```", false);
+
+            embedBuilder.addField("Operative System", "```" + osName + " " + osVersion + "```", false);
+
+            embedBuilder.addField("Member Count", "```" + event.getGuild().getMemberCount() + " Members" + "```", true);
+            embedBuilder.addField("Server Boosts", "```" + event.getGuild().getBoostCount() + " Boosts" + "```", true);
+            embedBuilder.addField("Server Owner", "```" + event.getGuild().getOwner() + "```", true);
+
+            embedBuilder.setTimestamp(event.getTimeCreated());
+            embedBuilder.setFooter("stats by danilppzz", event.getGuild().getIconUrl());
+
+            event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
         }
     }
 }

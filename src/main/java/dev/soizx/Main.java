@@ -61,9 +61,6 @@ public class Main {
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR)),
                 Commands.slash("ping", "Test the response time.")
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR)),
-                Commands.slash("rand", "Write a random number between 2 numbers.")
-                        .addOption(OptionType.NUMBER, "min", "Min value for rand generator.", true)
-                        .addOption(OptionType.NUMBER, "max", "Max value for rand generator.", true),
                 Commands.slash("links", "Get active links on the server."),
                 Commands.slash("reqdev", "Request to the developer rank.")
                         .addOption(OptionType.STRING, "language", "Select your language.", true, true)

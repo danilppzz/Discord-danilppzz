@@ -6,6 +6,7 @@ import dev.soizx.context.GuildMessageContext;
 import dev.soizx.context.GuildUserContext;
 import dev.soizx.handler.GuildMemberJoinHandler;
 import dev.soizx.handler.GuildMemberNameCheckerHandler;
+import dev.soizx.handler.ListenerModelInteraction;
 import dev.soizx.util.LoadConfig;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -29,7 +30,7 @@ public class Main {
         JDA builder = JDABuilder.createDefault(LoadConfig.Env("token"))
                 .setBulkDeleteSplittingEnabled(false)
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
-                .setActivity(Activity.customStatus("⚡ Build in JDA"))
+                .setActivity(Activity.customStatus("🤍 Build in JDA"))
                 .enableIntents(
                         GatewayIntent.GUILD_MESSAGES,
                         GatewayIntent.MESSAGE_CONTENT,
@@ -51,6 +52,7 @@ public class Main {
         builder.addEventListener(new GuildMemberCommands());
         builder.addEventListener(new GuildUserContext());
         builder.addEventListener(new GuildMessageContext());
+        builder.addEventListener(new ListenerModelInteraction());
 
         // Commands Builders
         builder.updateCommands().addCommands(
@@ -61,7 +63,8 @@ public class Main {
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR)),
                 Commands.slash("rand", "Write a random number between 2 numbers.")
                         .addOption(OptionType.NUMBER, "min", "Min value for rand generator.", true)
-                        .addOption(OptionType.NUMBER, "max", "Max value for rand generator.", true)
+                        .addOption(OptionType.NUMBER, "max", "Max value for rand generator.", true),
+                Commands.slash("reqdev", "Request to the developer rank.")
         ).queue();
 
         logger.info("Done (" + ((double) (System.currentTimeMillis() - time)/1000) + "s)");

@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0615f009-2ac4-41c7-b5b7-44754fe2cbe8" name="Changes" comment="Reformat Files">
+    <list default="true" id="0615f009-2ac4-41c7-b5b7-44754fe2cbe8" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/SystemPerformance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/commands/GuildAdminCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/commands/GuildAdminCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/commands/GuildMemberCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/commands/GuildMemberCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/context/GuildMessageContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/context/GuildMessageContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/context/GuildUserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/context/GuildUserContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/handler/GuildMemberJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/handler/GuildMemberJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Form.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/LoadConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/LoadConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/MathFunctions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Validations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Validations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +62,7 @@
     <configuration name="run" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="dev.soizx.Main" />
       <module name="discord-soizx" />
+      <option name="VM_PARAMETERS" value="-Xms1024m" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,13 +109,21 @@
       <option name="project" value="LOCAL" />
       <updated>1704393105427</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update">
+      <option name="closed" value="true" />
+      <created>1704394183906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704394183906</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update / created ( reqdev command )" />
-    <MESSAGE value="Update" />
     <MESSAGE value="Reformat Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat Files" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>

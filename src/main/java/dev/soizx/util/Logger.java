@@ -27,14 +27,14 @@ public class Logger {
         }
 
         embedBuilder.setThumbnail(messageUser.getAvatarUrl());
-        embedBuilder.setTitle("Message LOGGED at ` "+ Form.dateNow(Form.allFormat)+" `");
+        embedBuilder.setTitle("Message LOGGED at ` "+ Validations.dateNow(Validations.allFormat)+" `");
         embedBuilder.addField("Created at","` "+event.getTimeCreated()+" `",true);
         embedBuilder.addField("Author ", messageUser.getAsMention()+" ",true);
-        embedBuilder.addField("Malicious links ", "` "+ Form.isLinkInBlacklist(event.getInteraction().getTarget().getContentDisplay())+" `",true);
+        embedBuilder.addField("Malicious links ", "` "+ Validations.isLinkInBlacklist(event.getInteraction().getTarget().getContentDisplay())+" `",true);
         embedBuilder.addField("","",false);
         embedBuilder.addField("MessageContent","```"+event.getInteraction().getTarget().getContentDisplay().replace("`", "'")+"```",false);
         embedBuilder.addField("","",false);
-        embedBuilder.addField("MessageLinks", Form.getLinks(event.getInteraction().getTarget().getContentDisplay()),false);
+        embedBuilder.addField("MessageLinks", Validations.getLinks(event.getInteraction().getTarget().getContentDisplay()),false);
 
 
         assert textChannel != null;

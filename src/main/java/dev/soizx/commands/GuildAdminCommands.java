@@ -1,5 +1,6 @@
 package dev.soizx.commands;
 
+import dev.soizx.util.SystemPerformance;
 import dev.soizx.util.Validations;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Invite;
@@ -39,13 +40,13 @@ public class GuildAdminCommands extends ListenerAdapter {
 
             embedBuilder.addBlankField(false);
 
-            embedBuilder.addField("Performance", "```" + osName + " " + osVersion + "```", false);
+            embedBuilder.addField("Performance", "```RAM: " + SystemPerformance.getUsageMemory() +" / "+ SystemPerformance.getTotalMemory() + " MB \nCPU: "+ SystemPerformance.getUsageCores() +" / "+ SystemPerformance.getTotalCores() + " cores```", false);
 
             embedBuilder.addField("Operative System", "```" + osName + " " + osVersion + "```", false);
 
             embedBuilder.addField("Member Count", "```" + event.getGuild().getMemberCount() + " Members" + "```", true);
             embedBuilder.addField("Server Boosts", "```" + event.getGuild().getBoostCount() + " Boosts" + "```", true);
-            embedBuilder.addField("Server Owner", "```" + event.getGuild().getOwner() + "```", true);
+            embedBuilder.addField("Server Owner", "```" + Objects.requireNonNull(event.getGuild().getOwner()).getEffectiveName() + "```", true);
 
             embedBuilder.setTimestamp(event.getTimeCreated());
             embedBuilder.setFooter("stats by danilppzz", event.getGuild().getIconUrl());

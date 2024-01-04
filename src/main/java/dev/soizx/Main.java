@@ -23,9 +23,6 @@ public class Main {
     public static Logger logger = Logger.getLogger("Server");
 
     public static void main(String[] args) {
-        Runtime runtime = Runtime.getRuntime();
-        int max = (int) (runtime.totalMemory() / (1024 * 1024));
-        System.out.println(max);
         long time = System.currentTimeMillis();
 
         JDA builder = JDABuilder.createDefault(LoadConfiguration.Env("token"))

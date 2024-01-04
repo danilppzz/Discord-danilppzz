@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0615f009-2ac4-41c7-b5b7-44754fe2cbe8" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/SystemPerformance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/commands/GuildAdminCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/commands/GuildAdminCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/commands/GuildMemberCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/commands/GuildMemberCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/context/GuildMessageContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/context/GuildMessageContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/context/GuildUserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/context/GuildUserContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/handler/GuildMemberJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/handler/GuildMemberJoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Form.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/LoadConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/LoadConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/MathFunctions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Validations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/Validations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/soizx/util/SystemPerformance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/soizx/util/SystemPerformance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,15 +49,38 @@
     "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="run" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Application.SystemPerformance Test">
+    <configuration name="MainClass Run" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="dev.soizx.Main" />
       <module name="discord-soizx" />
-      <option name="VM_PARAMETERS" value="-Xms1024m" />
+      <option name="VM_PARAMETERS" value="-Xms1024m -XX:ActiveProcessorCount=2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SystemPerformance Test" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="dev.soizx.util.SystemPerformance" />
+      <module name="discord-soizx" />
+      <option name="VM_PARAMETERS" value="-Xms1024m -XX:ActiveProcessorCount=2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.soizx.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainClass Run" />
+      <item itemvalue="Application.SystemPerformance Test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SystemPerformance Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -117,12 +131,37 @@
       <option name="project" value="LOCAL" />
       <updated>1704394183906</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update">
+      <option name="closed" value="true" />
+      <created>1704401877203</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704401877203</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Validations.java &amp; SystemPerformance.java">
+      <option name="closed" value="true" />
+      <created>1704401908260</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704401908260</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update">
+      <option name="closed" value="true" />
+      <created>1704401920983</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1704401920983</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update / created ( reqdev command )" />
     <MESSAGE value="Reformat Files" />
+    <MESSAGE value="Validations.java &amp; SystemPerformance.java" />
     <MESSAGE value="Update" />
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>

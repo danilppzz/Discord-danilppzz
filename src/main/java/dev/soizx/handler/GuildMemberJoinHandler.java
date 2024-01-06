@@ -19,16 +19,14 @@ public class GuildMemberJoinHandler extends ListenerAdapter {
         if (textChannel != null) {
             EmbedBuilder embedBuilder = new EmbedBuilder();
 
-            // EmbedBuilder Props
-            embedBuilder.setColor(Color.decode("#E81F63"));
+            embedBuilder.setTitle("Welcome " + user.getName(), "https://discord.gg/7MePMjSnNr");
+            embedBuilder.setDescription(user.getAsMention()+" has entered the server,\nnow we are "+event.getGuild().getMemberCount()+" users!");
+            embedBuilder.setColor(Color.decode("#4F90DF"));
             embedBuilder.setThumbnail(user.getAvatarUrl());
-            embedBuilder.setTitle("Welcome " + user.getName());
-            embedBuilder.addField("Count", "Now we are ` " + event.getGuild().getMemberCount() + " ` members in the server", false);
-            embedBuilder.addField("Joined at ", "` " + Validations.dateNow(Validations.allFormat) + " `", true);
-            embedBuilder.addField("Created at ", "` " + user.getTimeCreated() + " `", true);
-            embedBuilder.addField("", user.getAsMention(), false);
 
-            // SendMessage Embed
+            embedBuilder.setTimestamp(event.getGuild().getTimeCreated());
+            embedBuilder.setFooter("welcome by danilppzz", event.getGuild().getIconUrl());
+
             textChannel.sendMessageEmbeds(embedBuilder.build()).queue();
         }
 

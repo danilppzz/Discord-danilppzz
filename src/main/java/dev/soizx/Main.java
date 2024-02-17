@@ -65,6 +65,8 @@ public class Main {
                 Commands.slash("reqdev", "Request to the developer rank.")
                         .addOption(OptionType.STRING, "language", "Select your language.", true, true),
                 Commands.slash("stats", "Return the stats of the server and the bot.")
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR)),
+                Commands.slash("clear", "Clear all message in the text channel.")
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR))
 
         ).queue();

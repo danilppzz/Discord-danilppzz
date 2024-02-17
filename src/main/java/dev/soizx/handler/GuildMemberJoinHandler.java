@@ -1,7 +1,6 @@
 package dev.soizx.handler;
 
 import dev.soizx.Main;
-import dev.soizx.util.Validations;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
@@ -29,6 +28,8 @@ public class GuildMemberJoinHandler extends ListenerAdapter {
 
             textChannel.sendMessageEmbeds(embedBuilder.build()).queue();
         }
+
+        event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById("1158726737492971570")).queue();
 
         Main.logger.info("Joined - " + event.getMember().getEffectiveName() + " - newValue (" + event.getGuild().getMemberCount() + ")");
     }

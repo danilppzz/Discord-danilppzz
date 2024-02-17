@@ -13,7 +13,7 @@ public class GuildMessageContext extends ListenerAdapter {
     public void onMessageContextInteraction(MessageContextInteractionEvent event) {
         if (event.getName().equals("LOGGER")) {
             User user = event.getInteraction().getUser();
-            Logger.start(event, "1163433569855737898", user, 0);
+            Logger.start(event, "1158724802459222077", user, 0);
             event.reply("LOGGED").setEphemeral(true).queue();
             Main.logger.info("New Log - "+event.getTarget().getId()+" at "+ Validations.dateNow(Validations.allFormat));
         }

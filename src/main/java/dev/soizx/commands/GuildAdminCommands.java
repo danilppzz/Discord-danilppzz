@@ -4,6 +4,8 @@ import dev.soizx.util.SystemPerformance;
 import dev.soizx.util.Validations;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Invite;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -52,6 +54,10 @@ public class GuildAdminCommands extends ListenerAdapter {
             embedBuilder.setFooter("stats by danilppzz", event.getGuild().getIconUrl());
 
             event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
+        } else if (event.getName().equals("clear")) {
+            TextChannel textChannel = (TextChannel) event.getChannel();
+            textChannel.purgeMessages(textChannel.getIterableHistory().complete());
+            event.reply("Successfully cleared").setEphemeral(true).queue();
         }
     }
 }

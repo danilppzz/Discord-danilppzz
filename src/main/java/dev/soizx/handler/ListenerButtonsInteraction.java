@@ -27,6 +27,8 @@ public class ListenerButtonsInteraction extends ListenerAdapter {
             embedBuilder.setTitle("Congratulations! ");
             embedBuilder.addField("message", "You have obtained the rank of developer on the danilppzz discord server.", false);
 
+            event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById("1158726655381094431")).queue();
+
             assert privateChannel != null;
             privateChannel.sendMessageEmbeds(embedBuilder.build()).addActionRow(Button.link("https://discord.com/channels/1158719173891985500", "Go to the server!")).queue();
 

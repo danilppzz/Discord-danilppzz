@@ -1,8 +1,8 @@
-package dev.soizx.context;
+package dev.danilppzz.context;
 
-import dev.soizx.Main;
-import dev.soizx.util.Logger;
-import dev.soizx.util.Validations;
+import dev.danilppzz.Main;
+import dev.danilppzz.util.Logger;
+import dev.danilppzz.util.Validations;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.interaction.command.MessageContextInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

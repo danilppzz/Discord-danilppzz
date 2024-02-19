@@ -1,6 +1,6 @@
-package dev.soizx.commands;
+package dev.danilppzz.commands;
 
-import dev.soizx.util.Validations;
+import dev.danilppzz.util.Validations;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.ActionRow;

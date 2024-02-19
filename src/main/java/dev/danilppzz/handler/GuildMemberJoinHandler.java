@@ -1,6 +1,6 @@
-package dev.soizx.handler;
+package dev.danilppzz.handler;
 
-import dev.soizx.Main;
+import dev.danilppzz.Main;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;

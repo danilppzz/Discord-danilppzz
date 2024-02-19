@@ -1,6 +1,6 @@
-package dev.soizx.handler;
+package dev.danilppzz.handler;
 
-import dev.soizx.Main;
+import dev.danilppzz.Main;
 import net.dv8tion.jda.api.events.guild.member.update.GuildMemberUpdateNicknameEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 

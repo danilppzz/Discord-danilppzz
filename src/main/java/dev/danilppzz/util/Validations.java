@@ -1,4 +1,4 @@
-package dev.soizx.util;
+package dev.danilppzz.util;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -116,5 +116,14 @@ public class Validations {
         } else {
             return jsonLinks.toString();
         }
+    }
+
+    public static boolean isIdInArray(String id, String[] array) {
+        for (String element : array) {
+            if (element.equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

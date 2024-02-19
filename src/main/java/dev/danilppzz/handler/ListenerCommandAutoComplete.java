@@ -1,4 +1,4 @@
-package dev.soizx.handler;
+package dev.danilppzz.handler;
 
 import net.dv8tion.jda.api.events.interaction.command.CommandAutoCompleteInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

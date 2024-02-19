@@ -1,4 +1,4 @@
-package dev.soizx.util;
+package dev.danilppzz.util;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

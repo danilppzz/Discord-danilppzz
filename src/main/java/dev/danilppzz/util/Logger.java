@@ -1,4 +1,4 @@
-package dev.soizx.util;
+package dev.danilppzz.util;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;

@@ -1,4 +1,4 @@
-package dev.soizx.util;
+package dev.danilppzz.util;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.OperatingSystemMXBean;

@@ -1,11 +1,11 @@
-package dev.soizx;
+package dev.danilppzz;
 
-import dev.soizx.commands.GuildAdminCommands;
-import dev.soizx.commands.GuildMemberCommands;
-import dev.soizx.context.GuildMessageContext;
-import dev.soizx.context.GuildUserContext;
-import dev.soizx.handler.*;
-import dev.soizx.util.LoadConfiguration;
+import dev.danilppzz.commands.GuildAdminCommands;
+import dev.danilppzz.commands.GuildMemberCommands;
+import dev.danilppzz.context.GuildMessageContext;
+import dev.danilppzz.context.GuildUserContext;
+import dev.danilppzz.handler.*;
+import dev.danilppzz.util.LoadConfiguration;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;

@@ -1,11 +1,10 @@
-package dev.soizx.commands;
+package dev.danilppzz.commands;
 
-import dev.soizx.util.SystemPerformance;
-import dev.soizx.util.Validations;
+import dev.danilppzz.util.SystemPerformance;
+import dev.danilppzz.util.Validations;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Invite;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -56,8 +55,17 @@ public class GuildAdminCommands extends ListenerAdapter {
             event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
         } else if (event.getName().equals("clear")) {
             TextChannel textChannel = (TextChannel) event.getChannel();
-            textChannel.purgeMessages(textChannel.getIterableHistory().complete());
-            event.reply("Successfully cleared").setEphemeral(true).queue();
+
+            String[] blacklist = {"1197513743257587784", "1158719376703369226", "1158719887754141726", "1158719460480389230", "1158724802459222077", "1158724878430650378"};
+
+            if (Validations.isIdInArray(textChannel.getId(), blacklist)) {
+                event.reply("Can not delete the text in this channel.").setEphemeral(true).queue();
+            } else {
+                textChannel.purgeMessages(textChannel.getIterableHistory().complete());
+                event.reply("Successfully cleared.").setEphemeral(true).queue();
+            }
+
+
         }
     }
 }

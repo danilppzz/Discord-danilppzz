@@ -1,6 +1,6 @@
-package dev.soizx.handler;
+package dev.danilppzz.handler;
 
-import dev.soizx.util.Validations;
+import dev.danilppzz.util.Validations;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
